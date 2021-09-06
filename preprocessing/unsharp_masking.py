@@ -28,10 +28,9 @@ images.sort()
 i = 0
 
 while i <= len(images):
-    number = i  # PIck a number to select an image & mask
+    number = i
     image = images[number]
-    #print(image, mask)
-    # image=random.choice(images) #Randomly select an image name
+
     original_image = io.imread(image)
     unsharped_img = unsharp_mask(original_image, radius=20, amount=1)
     
@@ -39,10 +38,6 @@ while i <= len(images):
     io.imsave(new_image_path, unsharped_img)
     
     i += 1
-
-#sharpened = unsharp_mask(image0, radius=1.0, amount=1.0)
-
-
 
 # import matplotlib.pyplot as plt
 # fig = plt.figure(figsize=(12, 12))
